@@ -1,5 +1,5 @@
 #!/bin/sh
-EDITOR="mate --wait" bin/rails credentials:edit
+#EDITOR="mate --wait" bin/rails credentials:edit
 bundle exec puma -C config/puma.rb
 #foreman start
 
