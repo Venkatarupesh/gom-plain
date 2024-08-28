@@ -1,0 +1,2 @@
+class OutreachMeetingType < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class AudioSample < ApplicationRecord
+end

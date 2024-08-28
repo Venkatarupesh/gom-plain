@@ -1,0 +1,2 @@
+class OutreachActivity < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class PharmacyInventory < ApplicationRecord
+end
