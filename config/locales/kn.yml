@@ -1,0 +1,71 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+#
+kn:
+  user_not_found: "ಬಳಕೆದಾರರು ದೊರೆಯಲಿಲ್ಲ"
+  not_authenticated:  "ಪ್ರಮಾಣೀಕರಿಸಲಾಗಿಲ್ಲ"
+  user_not_approved: "ಬಳಕೆದಾರನು ಅನುಮೋದಿತನಾಗಿಲ್ಲ"
+  invalid_username_or_password: "ಬಳಕೆದಾರರ ಹೆಸರು ಅಥವಾ ಪಾಸ್ ವರ್ಡ್ ಅಮಾನ್ಯವಾಗಿದೆ"
+  logged_in_successfully: "ಯಶಸ್ವಿಯಾಗಿ ಲಾಗ್ ಇನ್ ಆಗಿದೆ"
+  logged_out_successfully: "ಯಶಸ್ವಿಯಾಗಿ ಲಾಗ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ"
+  invalid_auth_token: "ಅಮಾನ್ಯವಾದ ದೃಢೀಕರಣ ಟೋಕನ್"
+  mobile_number_already_registered: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಈಗಾಗಲೇ ನೇಮಕವಾಗಿದೆ"
+  otp_sent_successfully: "OTP ಯಶಸ್ವಿಯಾಗಿ ಕಳುಹಿಸಲಾಗಿದೆ"
+  otp_resent_successfully: "OTP ಮರೇಪಟ್ಟು ಯಶಸ್ವಿಯಾಗಿ ಕಳುಹಿಸಲಾಗಿದೆ"
+  please_wait_for_otp_resend_time: "OTP ಮರೇಪಟ್ಟು ಮರುವಿಕೆ ಮಾಡಲು ದಯವಿಟ್ಟು ಕಾಯಬೇಕು"
+  otp_record_not_found: "OTP ದಾಖಲೆ ಸಿಗಲಿಲ್ಲ"
+  verify_otp_successfully: "OTP ಯಶಸ್ವಿಯಾಗಿ ಪರಿಶೀಲಿಸಿದ್ದೇನೆ"
+  invalid_otp_or_expired: "ಅಮಾನ್ಯ OTP ಅಥವಾ ಅವಧಿ ಮೀರಿದೆ"
+  invalid_otp: "ಅಮಾನ್ಯ OTP"
+  otp_expired: "OTP ಅವಧಿ ಮುಗಿದಿದೆ"
+  fields_are_valid: "ಕ್ಷೇತ್ರಗಳು ಮಾನ್ಯವಾಗಿರುತ್ತವೆ"
+  fields_are_not_valid: "ಕ್ಷೇತ್ರಗಳು ಮಾನ್ಯವಾಗಿಲ್ಲ"
+  request_id_is_missing: "ವಿನಂತಿ ಐಡಿ ಕಾಣಸಿಗುತ್ತಿಲ್ಲ."
+  registration_approved_successfully: "ನೋಂದಣಿ ಯಶಸ್ವಿಯಾಗಿ ಅನುಮೋದಿಸಲಾಗಿದೆ"
+  registration_not_approved: "ನೋಂದಣಿ ಅಂಗೀಕರಿಸಲಿಲ್ಲ"
+  password_reset_successfully: "ಪಾಸ್ವರ್ಡ್ ನವೀಕರಿಸಲಾಗಿದೆ"
+  failed_to_reset_password: "ಪಾಸ್ವರ್ಡ್ ನವೀಕರಿಸಲು ವಿಫಲ"
+  attendance_marked_successfully: "ಹಾಜರಾತಿಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಗುರುತಿಸಲಾಗಿದೆ"
+  something_went_wrong_please_try_again_later: "ಏನೋ ತಪ್ಪಾಗಿದೆ ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ"
+  record_fetched_successfully: "ದಾಖಲೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಪಡೆಯಲಾಗಿದೆ"
+  no_records: "ದಾಖಲೆಗಳಿಲ್ಲ"
+  health_facility_location_updated: "HealthFacility ಸ್ಥಳವನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ"
+  fcm_token_stored_successfully: "FCM ಟೋಕನ್ ಅನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ"
+  record_created_successfully: "ರೆಕಾರ್ಡ್ ರಚಿಸಲಾಗಿದೆ ನವೀಕರಿಸಲಾಗಿದೆ"
+  record_updated_successfully: "ರೆಕಾರ್ಡ್ ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ"
+  record_created/updated_successfully: "ರೆಕಾರ್ಡ್ ಯಶಸ್ವಿಯಾಗಿ ರಚಿಸಲಾಗಿದೆ/ನವೀಕರಿಸಲಾಗಿದೆ"
+  area_limit_reached: "ಪ್ರದೇಶದ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ"
+  asha_cannot_change_village: "ಆಶಾ ಗ್ರಾಮವನ್ನು ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ"
+  notification_sent_successfully: "ಅಧಿಸೂಚನೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಕಳುಹಿಸಲಾಗಿದೆ"
+  record_deleted_successfully: "ದಾಖಲೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಅಳಿಸಲಾಗಿದೆ"
+  record_not_found: "ದಾಖಲೆ ಸಿಕ್ಕಿಲ್ಲ"
+  image_uploaded_successfully: "ಚಿತ್ರ ಅಪ್ಲೋಡ್ ಯಶಸ್ವಿಯಾಗಿದೆ"
+  image_upload_failed: "ಇಮೇಜ್ ಅಪ್ಲೋಡ್ ವಿಫಲವಾಗಿದೆ"

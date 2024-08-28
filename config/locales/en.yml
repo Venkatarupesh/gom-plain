@@ -1,0 +1,71 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  user_not_found: "User not found"
+  not_authenticated: "Not Authenticated"
+  user_not_approved: "User not approved"
+  invalid_username_or_password: "Invalid username or password"
+  logged_in_successfully: "Logged in successfully"
+  logged_out_successfully: "Logged out successfully"
+  invalid_auth_token: "Invalid Auth Token"
+  mobile_number_already_registered: "Mobile number already registered"
+  otp_sent_successfully: "OTP sent successfully"
+  otp_resent_successfully: "OTP resent successfully"
+  please_wait_for_otp_resend_time: "Please wait for OTP resend time"
+  otp_record_not_found: "OTP record not found"
+  verify_otp_successfully: "Verify OTP successfully"
+  invalid_otp_or_expired: "Invalid OTP or expired"
+  invalid_otp: "Invalid OTP"
+  otp_expired: "OTP expired"
+  fields_are_valid: "Fields are valid"
+  fields_are_not_valid: "Fields are not valid"
+  request_id_is_missing: "Request ID is missing."
+  registration_approved_successfully: "Registration Approved Successfully"
+  registration_not_approved: "Registration Not Approved"
+  password_reset_successfully: "Password Reset Successfully"
+  failed_to_reset_password: "Failed to Reset Password"
+  attendance_marked_successfully: "Attendance marked successfully"
+  something_went_wrong_please_try_again_later: "Something went wrong please try again later"
+  record_fetched_successfully: "Record fetched successfully"
+  no_records: "No Records"
+  health_facility_location_updated: "HealthFacility location updated"
+  fcm_token_stored_successfully: "FCM token stored successfully"
+  record_created_successfully: "Record created successfully"
+  record_updated_successfully: "Record updated successfully"
+  record_created/updated_successfully: "Record created/updated successfully"
+  area_limit_reached: "Area limit reached"
+  asha_cannot_change_village: "ASHA cannot change villages"
+  notification_sent_successfully: "Notification Sent Successfully"
+  record_deleted_successfully: "Record deleted successfully"
+  record_not_found: "Record not found"
+  image_uploaded_successfully: "Image uploaded success"
+  image_upload_failed: "Image uploaded failed"
