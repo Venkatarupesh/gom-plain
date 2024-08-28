@@ -1,7 +1,7 @@
 FROM ruby:3.3.0-alpine
 ARG RAILS_ROOT=/app
 ARG PACKAGES="tzdata postgresql-client bash libcurl"
-ARG BUILD_PACKAGES="build-base curl-dev git imagemagick libjpeg-turbo libgomp freetype-dev freetype-dev"
+ARG BUILD_PACKAGES="build-base curl-dev git imagemagick libjpeg-turbo libgomp freetype-dev freetype-dev libxml2 libxslt"
 ARG DEV_PACKAGES="postgresql-dev libpq-dev imagemagick-dev libwebp-dev"
 ARG RUBY_PACKAGES="tzdata"
 ENV LANG C.UTF-8
