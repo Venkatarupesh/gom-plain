@@ -5,19 +5,29 @@ module Api
 
       def send_otp
         user = User.find_by(mobile: params[:mobile_number])
+        otp_limit_key = "otp_limit:#{params[:mobile_number]}"
+        otp_requests = Redis.current.get(otp_limit_key).to_i
+        if otp_requests >= 3
+          json_response({ message: I18n.t('otp_request_limit_reached') }, 429) and return
+        end
+        Redis.current.multi do
+          Redis.current.incr(otp_limit_key)
+          Redis.current.expire(otp_limit_key, 10.minutes)
+        end
+        Otp.where(mobile: params[:mobile_number]).really_destroy!
         if params[:is_registration] == 'true'
           if user
             json_response({ message: I18n.t('mobile_number_already_registered') }, 500)
           else
             otp_data = GenerateOtpHelper.verification_code
-            Otp.create!(transaction_id: otp_data[:transaction_id], mobile: params[:mobile_number], otp: otp_data[:otp], valid_till: otp_data[:valid_till], hash_code: params[:hash], is_new_account: true)
+            Otp.create!(transaction_id: otp_data[:transaction_id], mobile: params[:mobile_number], otp: otp_data[:otp], valid_till: otp_data[:valid_till], hash_code: params[:hash], is_new_account: true, otp_verified: 2)
             AwsSnsService.new.send_otp(params[:mobile_number].to_s, otp_data[:otp], params[:hash])
             json_response({ message: I18n.t('otp_sent_successfully'), is_new_account: true, transaction_id: otp_data[:transaction_id] }, 200)
           end
         elsif params[:is_registration] == 'false'
           if user
             otp_data = GenerateOtpHelper.verification_code
-            Otp.create!(transaction_id: otp_data[:transaction_id], mobile: params[:mobile_number], otp: otp_data[:otp], valid_till: otp_data[:valid_till], hash_code: params[:hash], is_new_account: false)
+            Otp.create!(transaction_id: otp_data[:transaction_id], mobile: params[:mobile_number], otp: otp_data[:otp], valid_till: otp_data[:valid_till], hash_code: params[:hash], is_new_account: false, otp_verified: 2)
             user.update(transaction_id: otp_data[:transaction_id])
             AwsSnsService.new.send_otp(user.mobile.to_s, otp_data[:otp], params[:hash])
             json_response({ message: I18n.t('otp_sent_successfully'), is_new_account: false, transaction_id: otp_data[:transaction_id] }, 200)
@@ -54,7 +64,11 @@ module Api
         if validate_otp(otp_record.valid_till)
           user = User.find_by(transaction_id: otp_record.transaction_id)
           if user
-            otp_record.really_destroy! unless params[:is_reset_password] == 'true'
+            if params[:is_reset_password] == 'true'
+              otp_record.update!(otp_verified: 1)
+            else
+              otp_record.really_destroy!
+            end
             json_response({ message: I18n.t('verify_otp_successfully'), username: user.username }, 200)
           elsif otp_record.is_new_account == true
             # otp_record.save!
@@ -76,10 +90,11 @@ module Api
       end
 
       def reset_password
-        otp_record = Otp.find_by(transaction_id: params[:transaction_id])
+        otp_record = Otp.find_by(transaction_id: params[:transaction_id], otp_verified: 1)
         user = User.find_by(transaction_id: otp_record&.transaction_id.to_s)
-        if user && user.update(password: params[:password])
+        if user && user.update(password: params[:password]) && otp_record
           otp_record.really_destroy!
+          UserSession.find_by(user_id: @current_user.id)&.really_destroy!
           json_response({ message: I18n.t('password_reset_successfully') }, 200)
         else
           json_response({ message: I18n.t('failed_to_reset_password') }, 422)
