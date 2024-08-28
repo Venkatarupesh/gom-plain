@@ -17,4 +17,4 @@ RUN bundle install --jobs $(nproc) --retry 3
 COPY . $RAILS_ROOT/
 RUN chmod +x $RAILS_ROOT/docker-entrypoint.sh
 EXPOSE 3000
-ENTRYPOINT ["sh", "./docker-entrypoint.sh"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
