@@ -1,6 +1,6 @@
 FROM ruby:3.3.0-alpine
 ARG RAILS_ROOT=/app
-ARG PACKAGES="tzdata postgresql-client bash libcurl libxml2 libxslt"
+ARG PACKAGES="tzdata postgresql-client bash libcurl libxml2 libxslt gcompat libstdc++"
 ARG BUILD_PACKAGES="build-base curl-dev git imagemagick libjpeg-turbo libgomp"
 ARG DEV_PACKAGES="postgresql-dev libpq-dev imagemagick-dev libwebp-dev freetype-dev libc-dev gcc libxml2-dev libxslt-dev"
 ARG RUBY_PACKAGES="tzdata"
