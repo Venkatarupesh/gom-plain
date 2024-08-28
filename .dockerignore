@@ -1,0 +1,9 @@
+.git
+.github
+/tmp/*
+/log/*
+/test/*
+/vendor/*
+local_history.patch
+kubernetes/
+docker/
